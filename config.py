@@ -15,7 +15,7 @@ workers = multiprocessing.cpu_count() * 2 + 1
 worker_class = 'gunicorn.workers.ggevent.GeventWorker'
 
 access_log_format = '{"remote_ip":"%(h)s","request_id":"%({X-Request-Id}i)s","response_code":"%(s)s","request_method":"%(m)s","request_path":"%(U)s","request_querystring":"%(q)s","request_timetaken":"%(D)s","response_length":"%(B)s"}'
-logconfig = "/home/fandong/fandong/code/blog_web/flaskr/logging.conf"
+# logconfig = "/home/fandong/fandong/code/blog_web/flaskr/logging.conf"
 accesslog = "/home/fandong/fandong/code/blog_web/blog_web.log"
 pythonpath = os.path.join(os.path.split(os.path.realpath(__file__))[0], "blog_web")
 
