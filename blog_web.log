@@ -1,2 +1,1 @@
-{"remote_ip":"127.0.0.1","request_id":"-","response_code":"200","request_method":"GET","request_path":"/auth/login","request_querystring":"","request_timetaken":"12014","response_length":"611"}
-{"remote_ip":"127.0.0.1","request_id":"-","response_code":"304","request_method":"GET","request_path":"/static/style.css","request_querystring":"","request_timetaken":"6034","response_length":"0"}
+{"remote_ip":"127.0.0.1","request_id":"-","response_code":"200","request_method":"GET","request_path":"/clear","request_querystring":"","request_timetaken":"2393","response_length":"14"}

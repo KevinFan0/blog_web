@@ -3,6 +3,13 @@
 from flask import Flask
 import os
 from flaskr import db,auth,blog
+import logging.config
+import logging
+
+filepath = os.path.join(os.path.dirname(__file__), 'logging.conf')
+# print(filepath)
+logging.config.fileConfig('logging.conf')
+logger = logging.getLogger('root')
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
@@ -22,7 +29,17 @@ def create_app(test_config=None):
 
     @app.route('/hello')
     def hello():
+        logger.info("begin to hello")
         return 'Hello,fandong!'
+
+    @app.route('/clear', methods=["get"])
+    def clear_csv():
+        file = open('blog_web.log', 'w+')
+        f1 = file.readline()
+        print(f1)
+        file.truncate()
+        print(file)
+        return 'clear finished'
 
     db.init_app(app)
     

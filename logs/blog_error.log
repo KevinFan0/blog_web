@@ -1,0 +1,932 @@
+[2018-05-30 16:08:37 +0800] [63898] [DEBUG] Current configuration:
+  config: config.py
+  bind: ['0.0.0.0:5000']
+  backlog: 2048
+  workers: 9
+  worker_class: gunicorn.workers.ggevent.GeventWorker
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  chdir: /home/fandong/fandong/code/blog_web
+  daemon: False
+  raw_env: []
+  pidfile: /home/fandong/fandong/code/blog_web/run/blog.pid
+  worker_tmp_dir: None
+  user: 1000
+  group: 1000
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /home/fandong/fandong/code/blog_web/logs/blog_access.log
+  access_log_format: {"remote_ip":"%(h)s","request_id":"%({X-Request-Id}i)s","response_code":"%(s)s","request_method":"%(m)s","request_path":"%(U)s","request_querystring":"%(q)s","request_timetaken":"%(D)s","response_length":"%(B)s"}
+  errorlog: /home/fandong/fandong/code/blog_web/logs/blog_error.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: /home/fandong/fandong/code/blog_web/flaskr/logging.conf
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: flaskr:application
+  pythonpath: /home/fandong/fandong/code/blog_web
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7efec4ec46a8>
+  on_reload: <function OnReload.on_reload at 0x7efec4ec4840>
+  when_ready: <function WhenReady.when_ready at 0x7efec4ec49d8>
+  pre_fork: <function Prefork.pre_fork at 0x7efec4ec4b70>
+  post_fork: <function Postfork.post_fork at 0x7efec4ec4d08>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7efec4ec4ea0>
+  worker_int: <function WorkerInt.worker_int at 0x7efec4ecb0d0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7efec4ecb268>
+  pre_exec: <function PreExec.pre_exec at 0x7efec4ecb400>
+  pre_request: <function PreRequest.pre_request at 0x7efec4ecb598>
+  post_request: <function PostRequest.post_request at 0x7efec4ecb6a8>
+  child_exit: <function ChildExit.child_exit at 0x7efec4ecb840>
+  worker_exit: <function WorkerExit.worker_exit at 0x7efec4ecb9d8>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7efec4ecbb70>
+  on_exit: <function OnExit.on_exit at 0x7efec4ecbd08>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: TLSv1
+  raw_paste_global_conf: []
+[2018-05-30 16:08:37 +0800] [63898] [INFO] Starting gunicorn 19.7.1
+[2018-05-30 16:08:37 +0800] [63898] [DEBUG] Arbiter booted
+[2018-05-30 16:08:37 +0800] [63898] [INFO] Listening at: http://0.0.0.0:5000 (63898)
+[2018-05-30 16:08:37 +0800] [63898] [INFO] Using worker: gunicorn.workers.ggevent.GeventWorker
+[2018-05-30 16:08:37 +0800] [63901] [INFO] Booting worker with pid: 63901
+[2018-05-30 16:08:37 +0800] [63902] [INFO] Booting worker with pid: 63902
+[2018-05-30 16:08:37 +0800] [63904] [INFO] Booting worker with pid: 63904
+[2018-05-30 16:08:37 +0800] [63905] [INFO] Booting worker with pid: 63905
+[2018-05-30 16:08:37 +0800] [63907] [INFO] Booting worker with pid: 63907
+[2018-05-30 16:08:37 +0800] [63908] [INFO] Booting worker with pid: 63908
+[2018-05-30 16:08:37 +0800] [63912] [INFO] Booting worker with pid: 63912
+[2018-05-30 16:08:37 +0800] [63898] [DEBUG] 9 workers
+[2018-05-30 16:08:38 +0800] [63915] [INFO] Booting worker with pid: 63915
+[2018-05-30 16:08:38 +0800] [63916] [INFO] Booting worker with pid: 63916
+[2018-05-30 16:08:38 +0800] [63901] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:08:38 +0800] [63901] [INFO] Worker exiting (pid: 63901)
+[2018-05-30 16:08:38 +0800] [63902] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:08:38 +0800] [63902] [INFO] Worker exiting (pid: 63902)
+[2018-05-30 16:08:38 +0800] [63904] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:08:38 +0800] [63904] [INFO] Worker exiting (pid: 63904)
+[2018-05-30 16:08:38 +0800] [63905] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:08:39 +0800] [63905] [INFO] Worker exiting (pid: 63905)
+[2018-05-30 16:08:38 +0800] [63907] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:08:39 +0800] [63907] [INFO] Worker exiting (pid: 63907)
+[2018-05-30 16:08:38 +0800] [63908] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:08:39 +0800] [63908] [INFO] Worker exiting (pid: 63908)
+[2018-05-30 16:08:40 +0800] [63912] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:08:40 +0800] [63912] [INFO] Worker exiting (pid: 63912)
+[2018-05-30 16:08:40 +0800] [63915] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:08:40 +0800] [63915] [INFO] Worker exiting (pid: 63915)
+[2018-05-30 16:08:40 +0800] [63916] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:08:41 +0800] [63916] [INFO] Worker exiting (pid: 63916)
+[2018-05-30 16:09:08 +0800] [63898] [CRITICAL] WORKER TIMEOUT (pid:63901)
+[2018-05-30 16:09:08 +0800] [63898] [CRITICAL] WORKER TIMEOUT (pid:63902)
+[2018-05-30 16:09:08 +0800] [63898] [CRITICAL] WORKER TIMEOUT (pid:63904)
+[2018-05-30 16:09:08 +0800] [63898] [CRITICAL] WORKER TIMEOUT (pid:63905)
+[2018-05-30 16:09:08 +0800] [63898] [CRITICAL] WORKER TIMEOUT (pid:63907)
+[2018-05-30 16:09:08 +0800] [63898] [CRITICAL] WORKER TIMEOUT (pid:63908)
+[2018-05-30 16:09:08 +0800] [63898] [CRITICAL] WORKER TIMEOUT (pid:63912)
+[2018-05-30 16:09:08 +0800] [63898] [CRITICAL] WORKER TIMEOUT (pid:63915)
+[2018-05-30 16:09:08 +0800] [63898] [CRITICAL] WORKER TIMEOUT (pid:63916)
+[2018-05-30 16:09:08 +0800] [63948] [INFO] Booting worker with pid: 63948
+[2018-05-30 16:09:08 +0800] [63949] [INFO] Booting worker with pid: 63949
+[2018-05-30 16:09:08 +0800] [63951] [INFO] Booting worker with pid: 63951
+[2018-05-30 16:09:08 +0800] [63953] [INFO] Booting worker with pid: 63953
+[2018-05-30 16:09:08 +0800] [63954] [INFO] Booting worker with pid: 63954
+[2018-05-30 16:09:08 +0800] [63955] [INFO] Booting worker with pid: 63955
+[2018-05-30 16:09:08 +0800] [63958] [INFO] Booting worker with pid: 63958
+[2018-05-30 16:09:08 +0800] [63961] [INFO] Booting worker with pid: 63961
+[2018-05-30 16:09:08 +0800] [63964] [INFO] Booting worker with pid: 63964
+[2018-05-30 16:09:08 +0800] [63948] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:09:08 +0800] [63948] [INFO] Worker exiting (pid: 63948)
+[2018-05-30 16:09:08 +0800] [63953] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:09:08 +0800] [63953] [INFO] Worker exiting (pid: 63953)
+[2018-05-30 16:09:08 +0800] [63949] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:09:08 +0800] [63949] [INFO] Worker exiting (pid: 63949)
+[2018-05-30 16:09:08 +0800] [63951] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:09:08 +0800] [63951] [INFO] Worker exiting (pid: 63951)
+[2018-05-30 16:09:08 +0800] [63958] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:09:08 +0800] [63958] [INFO] Worker exiting (pid: 63958)
+[2018-05-30 16:09:08 +0800] [63955] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:09:08 +0800] [63955] [INFO] Worker exiting (pid: 63955)
+[2018-05-30 16:09:08 +0800] [63954] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:09:08 +0800] [63954] [INFO] Worker exiting (pid: 63954)
+[2018-05-30 16:09:08 +0800] [63961] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:09:08 +0800] [63961] [INFO] Worker exiting (pid: 63961)
+[2018-05-30 16:09:09 +0800] [63964] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:09:09 +0800] [63964] [INFO] Worker exiting (pid: 63964)
+[2018-05-30 16:09:20 +0800] [63898] [INFO] Handling signal: winch
+[2018-05-30 16:09:20 +0800] [63898] [DEBUG] SIGWINCH ignored. Not daemonized
+[2018-05-30 16:09:20 +0800] [63898] [INFO] Handling signal: winch
+[2018-05-30 16:09:20 +0800] [63898] [DEBUG] SIGWINCH ignored. Not daemonized
+[2018-05-30 16:09:20 +0800] [63898] [INFO] Handling signal: winch
+[2018-05-30 16:09:20 +0800] [63898] [DEBUG] SIGWINCH ignored. Not daemonized
+[2018-05-30 16:09:20 +0800] [63898] [INFO] Handling signal: winch
+[2018-05-30 16:09:20 +0800] [63898] [DEBUG] SIGWINCH ignored. Not daemonized
+[2018-05-30 16:09:20 +0800] [63898] [INFO] Handling signal: winch
+[2018-05-30 16:09:20 +0800] [63898] [DEBUG] SIGWINCH ignored. Not daemonized
+[2018-05-30 16:09:20 +0800] [63898] [INFO] Handling signal: winch
+[2018-05-30 16:09:20 +0800] [63898] [DEBUG] SIGWINCH ignored. Not daemonized
+[2018-05-30 16:09:20 +0800] [63898] [INFO] Handling signal: winch
+[2018-05-30 16:09:20 +0800] [63898] [DEBUG] SIGWINCH ignored. Not daemonized
+[2018-05-30 16:09:21 +0800] [63898] [INFO] Handling signal: winch
+[2018-05-30 16:09:21 +0800] [63898] [DEBUG] SIGWINCH ignored. Not daemonized
+[2018-05-30 16:09:21 +0800] [63898] [INFO] Handling signal: winch
+[2018-05-30 16:09:21 +0800] [63898] [DEBUG] SIGWINCH ignored. Not daemonized
+[2018-05-30 16:09:21 +0800] [63898] [INFO] Handling signal: winch
+[2018-05-30 16:09:21 +0800] [63898] [DEBUG] SIGWINCH ignored. Not daemonized
+[2018-05-30 16:09:38 +0800] [63898] [CRITICAL] WORKER TIMEOUT (pid:63948)
+[2018-05-30 16:09:38 +0800] [63898] [CRITICAL] WORKER TIMEOUT (pid:63949)
+[2018-05-30 16:09:38 +0800] [63898] [CRITICAL] WORKER TIMEOUT (pid:63951)
+[2018-05-30 16:09:38 +0800] [63898] [CRITICAL] WORKER TIMEOUT (pid:63953)
+[2018-05-30 16:09:38 +0800] [63898] [CRITICAL] WORKER TIMEOUT (pid:63954)
+[2018-05-30 16:09:38 +0800] [63898] [CRITICAL] WORKER TIMEOUT (pid:63955)
+[2018-05-30 16:09:38 +0800] [63898] [CRITICAL] WORKER TIMEOUT (pid:63958)
+[2018-05-30 16:09:38 +0800] [63975] [INFO] Booting worker with pid: 63975
+[2018-05-30 16:09:38 +0800] [63976] [INFO] Booting worker with pid: 63976
+[2018-05-30 16:09:38 +0800] [63979] [INFO] Booting worker with pid: 63979
+[2018-05-30 16:09:38 +0800] [63981] [INFO] Booting worker with pid: 63981
+[2018-05-30 16:09:38 +0800] [63975] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:09:38 +0800] [63975] [INFO] Worker exiting (pid: 63975)
+[2018-05-30 16:09:38 +0800] [63983] [INFO] Booting worker with pid: 63983
+[2018-05-30 16:09:38 +0800] [63976] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:09:38 +0800] [63976] [INFO] Worker exiting (pid: 63976)
+[2018-05-30 16:09:38 +0800] [63984] [INFO] Booting worker with pid: 63984
+[2018-05-30 16:09:38 +0800] [63988] [INFO] Booting worker with pid: 63988
+[2018-05-30 16:09:38 +0800] [63979] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:09:38 +0800] [63979] [INFO] Worker exiting (pid: 63979)
+[2018-05-30 16:09:38 +0800] [63981] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:09:38 +0800] [63981] [INFO] Worker exiting (pid: 63981)
+[2018-05-30 16:09:39 +0800] [63983] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:09:39 +0800] [63983] [INFO] Worker exiting (pid: 63983)
+[2018-05-30 16:09:39 +0800] [63984] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:09:39 +0800] [63984] [INFO] Worker exiting (pid: 63984)
+[2018-05-30 16:09:39 +0800] [63988] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:09:39 +0800] [63988] [INFO] Worker exiting (pid: 63988)
+[2018-05-30 16:09:39 +0800] [63898] [CRITICAL] WORKER TIMEOUT (pid:63961)
+[2018-05-30 16:09:39 +0800] [63898] [CRITICAL] WORKER TIMEOUT (pid:63964)
+[2018-05-30 16:09:39 +0800] [63997] [INFO] Booting worker with pid: 63997
+[2018-05-30 16:09:40 +0800] [63998] [INFO] Booting worker with pid: 63998
+[2018-05-30 16:09:40 +0800] [63997] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:09:40 +0800] [63997] [INFO] Worker exiting (pid: 63997)
+[2018-05-30 16:09:40 +0800] [63998] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/ggevent.py", line 190, in init_process
+    super(GeventWorker, self).init_process()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/fandong/anaconda3/lib/python3.6/site-packages/gunicorn/util.py", line 352, in import_app
+    __import__(module)
+  File "/home/fandong/fandong/code/blog_web/flaskr/__init__.py", line 11, in <module>
+    logging.config.fileConfig('logging.conf')
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 76, in fileConfig
+    formatters = _create_formatters(cp)
+  File "/home/fandong/anaconda3/lib/python3.6/logging/config.py", line 109, in _create_formatters
+    flist = cp["formatters"]["keys"]
+  File "/home/fandong/anaconda3/lib/python3.6/configparser.py", line 959, in __getitem__
+    raise KeyError(key)
+KeyError: 'formatters'
+[2018-05-30 16:09:40 +0800] [63998] [INFO] Worker exiting (pid: 63998)
+[2018-05-30 16:09:46 +0800] [63898] [INFO] Handling signal: winch
+[2018-05-30 16:09:46 +0800] [63898] [DEBUG] SIGWINCH ignored. Not daemonized
+[2018-05-30 16:09:46 +0800] [63898] [INFO] Handling signal: winch
+[2018-05-30 16:09:46 +0800] [63898] [DEBUG] SIGWINCH ignored. Not daemonized
+[2018-05-30 16:09:46 +0800] [63898] [INFO] Handling signal: winch
+[2018-05-30 16:09:46 +0800] [63898] [DEBUG] SIGWINCH ignored. Not daemonized
+[2018-05-30 16:09:46 +0800] [63898] [INFO] Handling signal: winch
+[2018-05-30 16:09:46 +0800] [63898] [DEBUG] SIGWINCH ignored. Not daemonized
+[2018-05-30 16:09:47 +0800] [63898] [INFO] Handling signal: winch
+[2018-05-30 16:09:47 +0800] [63898] [DEBUG] SIGWINCH ignored. Not daemonized
+[2018-05-30 16:09:47 +0800] [63898] [INFO] Handling signal: winch
+[2018-05-30 16:09:47 +0800] [63898] [DEBUG] SIGWINCH ignored. Not daemonized
+[2018-05-30 16:09:47 +0800] [63898] [INFO] Handling signal: winch
+[2018-05-30 16:09:47 +0800] [63898] [DEBUG] SIGWINCH ignored. Not daemonized
+[2018-05-30 16:09:47 +0800] [63898] [INFO] Handling signal: winch
+[2018-05-30 16:09:47 +0800] [63898] [DEBUG] SIGWINCH ignored. Not daemonized
+[2018-05-30 16:09:58 +0800] [63898] [INFO] Handling signal: winch
+[2018-05-30 16:09:58 +0800] [63898] [DEBUG] SIGWINCH ignored. Not daemonized
+[2018-05-30 16:09:58 +0800] [63898] [INFO] Handling signal: winch
+[2018-05-30 16:09:58 +0800] [63898] [DEBUG] SIGWINCH ignored. Not daemonized
+[2018-05-30 16:09:58 +0800] [63898] [INFO] Handling signal: winch
+[2018-05-30 16:09:58 +0800] [63898] [DEBUG] SIGWINCH ignored. Not daemonized
+[2018-05-30 16:09:58 +0800] [63898] [INFO] Handling signal: winch
+[2018-05-30 16:09:58 +0800] [63898] [DEBUG] SIGWINCH ignored. Not daemonized
+[2018-05-30 16:09:58 +0800] [63898] [INFO] Handling signal: winch
+[2018-05-30 16:09:58 +0800] [63898] [DEBUG] SIGWINCH ignored. Not daemonized
+[2018-05-30 16:10:04 +0800] [63898] [INFO] Handling signal: int
+[2018-05-30 16:10:04 +0800] [63898] [INFO] Shutting down: Master
