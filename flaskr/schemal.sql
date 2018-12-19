@@ -6,7 +6,8 @@ CREATE TABLE user (
   username TEXT UNIQUE NOT NULL,
   password TEXT NOT NULL,
   gender TEXT NOT NULL,
-  school TEXT NOT NULL
+  school TEXT NOT NULL, 
+  role_id INTEGER NOT NULL
 );
 
 CREATE TABLE post (

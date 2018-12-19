@@ -1,5 +1,5 @@
 *.pyc
 *.xml
-__paycache__/
+__pycache__/
 .idea/
 .vscode/

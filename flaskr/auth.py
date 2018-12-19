@@ -1,4 +1,5 @@
 import functools
+import pdb
 from flask import (Blueprint,flash,g,
                    redirect,render_template,request,session,url_for)
 
@@ -11,10 +12,17 @@ bp = Blueprint('auth',__name__, url_prefix='/auth')
 @bp.route('/register',methods=('GET','POST'))
 def register():
     if request.method == 'POST':
+        pdb.set_trace()
         username = request.form['username']
         password = request.form['password']
         gender = request.form['gender']
         school = request.form['school']
+        role = request.form['role']
+        
+        if role == "superuser":
+            role = 1
+        else:
+            role = 2
         db = get_db()
         error = None
 
@@ -30,7 +38,7 @@ def register():
             error = 'User {} is already registered.'.format(username)
 
         if error is None:
-            db.execute('INSERT INTO user (username,password, gender, school) VALUES (?,?,?,?)', (username,generate_password_hash(password), gender, school))
+            db.execute('INSERT INTO user (username, password, gender, school, role) VALUES (?,?,?,?,?)', (username,generate_password_hash(password), gender, school, role))
             db.commit()
             return redirect(url_for('auth.login'))
 
