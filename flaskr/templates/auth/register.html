@@ -1,15 +1,19 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Register{% endblock %}</h1>
+  <h1>{% block title %}注册{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
   <form method="post">
-    <label for="username">Username</label>
+    <label for="username">用户名</label>
     <input name="username" id="username" required>
-    <label for="password">Password</label>
+    <label for="password">密码</label>
     <input type="password" name="password" id="password" required>
+    <label for="gender">性别</label>
+    <input name="gender" id="gender" required>
+    <label for="school">学院</label>
+    <input name="school" id="school" required>
     <input type="submit" value="Register">
   </form>
 {% endblock %}
