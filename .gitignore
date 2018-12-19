@@ -1,0 +1,4 @@
+*.pyc
+*.xml
+__paycache__/
+.idea/
