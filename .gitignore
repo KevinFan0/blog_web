@@ -2,3 +2,4 @@
 *.xml
 __paycache__/
 .idea/
+.vscode/
