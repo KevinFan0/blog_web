@@ -7,22 +7,21 @@ from werkzeug.security import check_password_hash,generate_password_hash
 from flaskr.db import get_db
 
 #定义蓝图
-bp = Blueprint('auth',__name__, url_prefix='/auth')
+bp = Blueprint('auth', __name__, url_prefix='/auth')
 
 @bp.route('/register',methods=('GET','POST'))
 def register():
     if request.method == 'POST':
-        pdb.set_trace()
         username = request.form['username']
         password = request.form['password']
         gender = request.form['gender']
         school = request.form['school']
-        role = request.form['role']
+        role_id = request.form['role']
         
-        if role == "superuser":
-            role = 1
+        if role_id == "superuser":
+            role_id = 1
         else:
-            role = 2
+            role_id = 2
         db = get_db()
         error = None
 
@@ -38,7 +37,7 @@ def register():
             error = 'User {} is already registered.'.format(username)
 
         if error is None:
-            db.execute('INSERT INTO user (username, password, gender, school, role) VALUES (?,?,?,?,?)', (username,generate_password_hash(password), gender, school, role))
+            db.execute('INSERT INTO user (username, password, gender, school, role_id) VALUES (?,?,?,?,?)', (username, generate_password_hash(password), gender, school, role_id))
             db.commit()
             return redirect(url_for('auth.login'))
 
