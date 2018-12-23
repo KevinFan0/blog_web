@@ -67,7 +67,6 @@ def login():
         flash(error)
 
     return render_template('auth/login.html')
-    
 
 @bp.before_app_request
 def load_logged_in_user():
@@ -93,3 +92,12 @@ def login_required(view):
         return view(**kwargs)
 
     return wrapped_view
+
+
+@bp.route('/users',methods=('GET','POST'))
+@login_required
+def get_users():
+    # if request.method == 'POST':
+    db = get_db()
+    posts = db.execute('SELECT username,gender,school,role_id FROM user').fetchall()
+    return render_template('auth/users.html', posts=posts)

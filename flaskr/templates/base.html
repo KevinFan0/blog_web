@@ -5,8 +5,14 @@
   <h1>个人博客</h1>
   <ul>
     {% if g.user %}
-      <li><span>{{ g.user['username'] }}</span>
-      <li><a href="{{ url_for('auth.logout') }}">退出</a>
+      {% if g.user['role_id'] == 1%}
+        <li><span>{{ g.user['username'] }}</span>
+        <li><a href="{{ url_for('auth.get_users') }}">用户列表</a>
+        <li><a href="{{ url_for('auth.logout') }}">退出</a>  
+      {% else %}
+        <li><span>{{ g.user['username'] }}</span>
+        <li><a href="{{ url_for('auth.logout') }}">退出</a>
+      {% endif %}
     {% else %}
       <li><a href="{{ url_for('auth.register') }}">注册</a>
       <li><a href="{{ url_for('auth.login') }}">登录</a>
