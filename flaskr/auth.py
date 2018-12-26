@@ -5,6 +5,7 @@ from flask import (Blueprint,flash,g,
 
 from werkzeug.security import check_password_hash,generate_password_hash
 from flaskr.db import get_db
+from werkzeug.exceptions import abort
 
 #定义蓝图
 bp = Blueprint('auth', __name__, url_prefix='/auth')
@@ -101,3 +102,21 @@ def get_users():
     db = get_db()
     posts = db.execute('SELECT username,gender,school,role_id FROM user').fetchall()
     return render_template('auth/users.html', posts=posts)
+
+
+def get_user(id,check_auth=True):
+    user = get_db().execute('SELECT username,gender,school,role_id FROM user WHERE p.id = ?', (id,)).fetone()
+
+    if user is None:
+        abort(404,"Post id {0} doesn't exist.".format(id))
+    return user
+
+
+@bp.route('/<int:id>/delete', methods=('POST',))
+@login_required
+def delete(id):
+    get_user(id)
+    db = get_db()
+    db.execute('DELETE FROM user WHERE id = ?', (id,))
+    db.commit()
+    return redirect(url_for('auth/users.html'))

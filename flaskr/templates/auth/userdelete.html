@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}删除用户 "{{ post['title'] }}"{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+
+  <hr>
+  <form action="{{ url_for('auth.delete', id=post['id']) }}" method="post">
+    <input class="danger" type="submit" value="Delete" onclick="return confirm('确认删除该用户吗?');">
+  </form>
+{% endblock %}
