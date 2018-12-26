@@ -100,12 +100,12 @@ def login_required(view):
 def get_users():
     # if request.method == 'POST':
     db = get_db()
-    posts = db.execute('SELECT username,gender,school,role_id FROM user').fetchall()
+    posts = db.execute('SELECT id,username,gender,school,role_id FROM user').fetchall()
     return render_template('auth/users.html', posts=posts)
 
 
 def get_user(id,check_auth=True):
-    user = get_db().execute('SELECT username,gender,school,role_id FROM user WHERE p.id = ?', (id,)).fetone()
+    user = get_db().execute('SELECT id,username,gender,school,role_id FROM user WHERE id = ?', (id,)).fetchone()
 
     if user is None:
         abort(404,"Post id {0} doesn't exist.".format(id))
@@ -119,4 +119,4 @@ def delete(id):
     db = get_db()
     db.execute('DELETE FROM user WHERE id = ?', (id,))
     db.commit()
-    return redirect(url_for('auth/users.html'))
+    return redirect(url_for('auth.get_users'))

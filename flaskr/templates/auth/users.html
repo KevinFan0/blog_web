@@ -12,7 +12,9 @@
                     <div class="about">{{post['username']}} </div>
                 </div>
                 {% if g.user['role_id'] == 1 %}
-                <a class="action" href="{{url_for('auth.delete',id=post['id'])}}">删除</a>
+                <form action="{{ url_for('auth.delete', id=post['id']) }}" method="post">
+                    <input class="danger" type="submit" value="删除" onclick="return confirm('确认删除该用户吗?');">
+                  </form>
                 {% endif %}
             </header>
             <p class="body">{{post['body']}}</p>
